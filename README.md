@@ -62,43 +62,43 @@ INSERT INTO PERSONS VALUES('KANNAN','RAVI',6600000,6,10001,'USA'),
 ('ROBERT','MOGAMBE', 5000000,4,10225,'TANZANIA'),
 ('SUKVINDER','SINGH', 6500000,6,10002,'UK');
 
-#####  **VIEW THE DETAILS OF THE TABLE PERSON**
+#####  *VIEW THE DETAILS OF THE TABLE PERSON*
 
   SELECT * FROM PERSON;
 
-#####  **List the distinct country names from the Persons table**
+#####  *List the distinct country names from the Persons table*
 
  SELECT DISTINCT COUNTRY_NAME FROM PERSONS;
 
 
-#####  **Select first names and last names from the Persons table with aliases**
+#####  *Select first names and last names from the Persons table with aliases*
 
   SELECT F_NAME AS FIRST_NAME , L_NAME AS SECOND_NAME,CONCAT(F_NAME , L_NAME) AS FULLNAME FROM PERSONS;
 
 
 
-#####  **Find all persons with a rating greater than 4.0**
+#####  *Find all persons with a rating greater than 4.0*
 
 SELECT CONCAT(F_NAME , L_NAME)
  AS FULLNAME, RATING FROM PERSONS
  WHERE RATING>4;
 
 
-#####  **Find countries with a population greater than 10 lakhs**
+#####  *Find countries with a population greater than 10 lakhs*
 
 SELECT DISTINCT COUNTRY_NAME,POPULATION
  FROM PERSONS
  WHERE POPULATION>1000000;
 
 
-#####  **Find persons who are from 'USA' or have a rating greater than 4.5**
+#####  *Find persons who are from 'USA' or have a rating greater than 4.5*
 
  SELECT CONCAT(F_NAME , L_NAME)
  AS FULLNAME,RATING FROM PERSONS
  WHERE RATING>4.5 
  AND COUNTRY_NAME LIKE 'USA%';
 
-#####  **FFind all persons where the country name is NULL**
+#####  *FFind all persons where the country name is NULL*
 
 SELECT CONCAT(F_NAME , L_NAME)
   AS FULLNAME 
@@ -106,26 +106,26 @@ SELECT CONCAT(F_NAME , L_NAME)
  WHERE COUNTRY_NAME ='';
  
 
-#####  **Find all persons from the countries 'USA', 'Canada', and 'UK'**
+#####  *Find all persons from the countries 'USA', 'Canada', and 'UK'**
 
  SELECT CONCAT(F_NAME , L_NAME)
  AS FULLNAME,COUNTRY_NAME  FROM PERSONS
  WHERE COUNTRY_NAME IN('CANADA','USA','UK');
 
 
-#####  **Find all persons not from the countries 'India' and 'Australia'**
+#####  *Find all persons not from the countries 'India' and 'Australia'
  SELECT CONCAT(F_NAME , L_NAME)
  AS FULLNAME,COUNTRY_NAME  FROM PERSONS
  WHERE COUNTRY_NAME NOT IN
  ('INDIA' ,'AUSTRALIA');
 
 
-#####  **Find all countries with a population between 5 lakhs and 20 MILLION**
+#####  *Find all countries with a population between 5 lakhs and 20 MILLION*
 SELECT COUNTRY_NAME,POPULATION FROM COUNTRY
   WHERE POPULATION BETWEEN 500000 AND 20000000;
 
 
-#####  *Find all countries whose names do not start with 'C'**
+#####  *Find all countries whose names do not start with 'C'*
   SELECT COUNTRY_NAME FROM
   COUNTRY WHERE COUNTRY_NAME NOT LIKE 'C%';
 
